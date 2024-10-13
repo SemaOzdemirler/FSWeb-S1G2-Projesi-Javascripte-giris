@@ -85,9 +85,29 @@ OYUNUN KURALLARI: Makas Kağıdı yener| Kağıt Taşı yener | Taş Makas'ı ye
 */
 
 function oyun(oyuncu, bilgisayar) {
-  /*buraya kodunu yazabilirsin*/
+  function bilgisayarSecimi (){   
+    let secim = Math.random() * 3
+    if ( secim === 0) { 
+      return "Kağıt";
+    } else if ( secim === 1) {
+      return "Makas";
+    } else {
+      return "Taş"
+  } 
+}  
+if((oyuncu === "Taş" && bilgisayar === "Makas") ||
+  (oyuncu === "Kağıt" && bilgisayar === "Taş") ||
+  (oyuncu === "Makas" && bilgisayar === "Kağıt")) {
+    return "Kazandın!"
+  } else if ((oyuncu === "Makas" && bilgisayar === "Taş") ||
+  (oyuncu === "Taş" && bilgisayar === "Kağıt") ||
+  (oyuncu === "Kağıt" && bilgisayar === "Makas")) {
+    return "Kaybettin!"
+} else {
+  return "Beraberlik"
+}  
 }
-
+console.log(oyun("Makas",oyun()))
 // Şimdi Taş, Kağıt, Makas oyununu bilgisayara karşı oynayalım!
 /*
 Öncelikle aşağıdakileri yap:
